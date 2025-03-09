@@ -52,15 +52,60 @@ class BinarySearchTree{
       }
     }
   }
+  // DFs
+  preOrder(root){
+    if(root){
+      console.log(root.value)
+      this.preOrder(root.left)
+      this.preOrder(root.right)
+    }
+  }
+  
+  inderOrder(root){
+    if(root){
+      this.inderOrder(root.left)
+      console.log(root.value)
+      this.inderOrder(root.right)
+    }
+  }
+  
+  postOrder(root){
+      if(root){
+      this.inderOrder(root.left)
+      this.inderOrder(root.right)
+      console.log(root.value)
+    }
+  }
+  // BFS
+  levelOrder(){
+    const queue = []
+    
+    queue.push(this.root)
+    
+    while(queue.length){
+      let curr = queue.shift()
+      console.log(curr.value)
+      if(curr.left){
+        queue.push(curr.left)
+      }if(curr.right){
+        queue.push(curr.right)
+      }
+    }
+  }
+  
+  min(root){
+    if(!root.left){
+      return root.value
+    } else{
+      return this.min(root.left)
+    }
+  }
+  
+  max(root){
+    if(!root.right){
+      return root.value
+    } else{
+      return this.min(root.right)
+    }
+  }
 }
-
-const bst = new BinarySearchTree()
-
-bst.insert(10)
-bst.insert(5)
-bst.insert(15)
-
-console.log(bst.root)
-console.log(bst.search(bst.root, 10))
-console.log(bst.search(bst.root, 5))
-console.log(bst.search(bst.root, 15))
