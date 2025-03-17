@@ -52,7 +52,7 @@ class BinarySearchTree{
       }
     }
   }
-  // DFs
+  // DFs (Root → Left → Right)
   preOrder(root){
     if(root){
       console.log(root.value)
@@ -60,7 +60,8 @@ class BinarySearchTree{
       this.preOrder(root.right)
     }
   }
-  
+
+  // Left → Root → Right)
   inderOrder(root){
     if(root){
       this.inderOrder(root.left)
@@ -68,11 +69,12 @@ class BinarySearchTree{
       this.inderOrder(root.right)
     }
   }
-  
+
+  // Left → Right → Root)
   postOrder(root){
       if(root){
-      this.inderOrder(root.left)
-      this.inderOrder(root.right)
+      this.postOrder(root.left)
+      this.postOrder(root.right)
       console.log(root.value)
     }
   }
