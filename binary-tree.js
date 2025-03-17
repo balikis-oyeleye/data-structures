@@ -52,6 +52,7 @@ class BinarySearchTree{
       }
     }
   }
+
   // DFs (Root → Left → Right)
   preOrder(root){
     if(root){
@@ -78,6 +79,7 @@ class BinarySearchTree{
       console.log(root.value)
     }
   }
+  
   // BFS
   levelOrder(){
     const queue = []
