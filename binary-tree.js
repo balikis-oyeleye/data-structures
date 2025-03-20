@@ -82,9 +82,7 @@ class BinarySearchTree{
   
   // BFS
   levelOrder(){
-    const queue = []
-    
-    queue.push(this.root)
+    const queue = [this.root]
     
     while(queue.length){
       let curr = queue.shift()
