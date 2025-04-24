@@ -142,3 +142,5 @@ deleteNode(root, value) {
 }
 
 }
+
+//In binary tree when inserting a node the smaller value to the parent is inserted to the left while the bigger id to the right
